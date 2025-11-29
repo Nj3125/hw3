@@ -10,11 +10,13 @@ Template for header made by Wenjin Zhou and provided in the HW1 pdf.
 
 <!DOCTYPE html>
     <html lang="en">
-        <header>
+        <head>
             <meta charset="UTF-8">
             <title>Multiplication Table</title>
+
+
             <linK rel="stylesheet" href="css/style.css">
-        </header>
+        </head>
         <body>
             <!---Container for the entire page-->
             <div class="container">
@@ -22,26 +24,28 @@ Template for header made by Wenjin Zhou and provided in the HW1 pdf.
                 <div id="title">
                     <h1>MULTIPLICATION-TABLE</h1>
                     <!---Input fields & button-->
-                    <div class="inputs">
-                        <!---Input for rows-->
-                        <div class="rows">
-                            <label>Min Rows:</label>
-                            <input type="number" id="minrow" value="1" min="-50" max="50">
-                            <label>Max Rows:</label>
-                            <input type="number" id="maxrow" value="10" min="-50" max="50">
+                    <form id="form">
+                        <div class="inputs">
+                            <!---Input for rows-->
+                            <div class="rows">
+                                <label>Min Rows:</label>
+                                <input type="number" id="minrow" name="minrow" value="1" min="-50" max="50">
+                                <label>Max Rows:</label>
+                                <input type="number" id="maxrow" name="maxrow" value="10" min="-50" max="50">
+                            </div>
+                            <!---Input for columns-->
+                            <div class="cols">
+                                <label>Min Columns:</label>
+                                <input type="number" id="mincol" name="mincol" value="1" min="-50" max="50">
+                                <label>Max Columns:</label>
+                                <input type="number" id="maxcol" name="maxcol" value="10" min="-50" max="50">
+                            </div>
+                            <!---Generate button-->
+                            <div class="buttons">
+                                <button id="generate" type="submit">Generate</button>
+                            </div>
                         </div>
-                        <!---Input for columns-->
-                        <div class="cols">
-                            <label>Min Columns:</label>
-                            <input type="number" id="mincol" value="1" min="-50" max="50">
-                            <label>Max Columns:</label>
-                            <input type="number" id="maxcol" value="10" min="-50" max="50">
-                        </div>
-                        <!---Generate button-->
-                        <div class="buttons">
-                            <button id="generate">Generate</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <!---Body container (not the same as regular body, which is the entire page)-->
                 <div class="body">
@@ -57,6 +61,8 @@ Template for header made by Wenjin Zhou and provided in the HW1 pdf.
                     <div id="mult-table"></div>
                 </div>
             </div>
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
             <!---JS Script for multiplication table-->
             <script src="js/MultiplicationTable.js"></script>
         </body>
